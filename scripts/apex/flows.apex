@@ -1,0 +1,11 @@
+Account acc = new Account();
+acc.Industry = 'Biotechnology';
+acc.Name = 'Flow Account From Apex';
+insert acc;
+Map<String,Object> inputs = new Map<String, Object>();
+inputs.put('AccountId', acc.Id);
+inputs.put('AccountName', acc.Name);
+inputs.put('CreatedByName', acc.CreatedBy);
+inputs.put('AccountOwnerId', '0057Q000005TJ4XQAW');
+Flow.Interview flow = new Flow.Interview.Account_Actions(inputs);
+flow.start();
